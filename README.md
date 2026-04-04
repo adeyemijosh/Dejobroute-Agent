@@ -34,7 +34,9 @@ Dejobroute-Agent/
 - Python 3.8+
 - [Desearch API](https://console.desearch.ai) API key
 
-### Installation
+### Local Development Setup
+
+This project runs entirely on localhost for development. The frontend connects to the backend API running on `http://localhost:5000`.
 
 1. **Clone the repository**
    ```bash
@@ -66,6 +68,7 @@ Dejobroute-Agent/
 
 4. **Start the Backend Server**
    ```bash
+   # From the project root or Backend directory
    cd Backend
    uvicorn main:app --reload --port 5000
    ```
@@ -73,7 +76,19 @@ Dejobroute-Agent/
 
 5. **Open the Frontend**
    
-   Simply open `Frontend/index.html` in your browser, or serve it with any static file server.
+   You have two options:
+   
+   **Option A - Direct File Access:**
+   Simply open `Frontend/index.html` directly in your browser.
+   
+   **Option B - Local HTTP Server (Recommended):**
+   ```bash
+   cd Frontend
+   python -m http.server 8080
+   ```
+   Then open `http://localhost:8080` in your browser.
+   
+   > The frontend is configured to connect to the backend at `http://localhost:5000`
 
 ## 📡 API Reference
 
